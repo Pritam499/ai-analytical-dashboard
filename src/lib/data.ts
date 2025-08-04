@@ -1,7 +1,7 @@
 import { DataRow } from '@/types';
 
 export function generateMockData(count = 30): DataRow[] {
-  let date = new Date();
+  const date = new Date();
   let revenue = 10000;
   const arr: DataRow[] = [];
 
