@@ -16,6 +16,11 @@ A fully client-side **Next.js 14 App Router** analytics dashboard featuring:
 
 [https://analytics-dashboard-ai.netlify.app/](https://analytics-dashboard-ai.netlify.app)
 
+### Sample:
+
+<img width="1919" height="863" alt="image" src="https://github.com/user-attachments/assets/66e9d633-3750-437e-883c-b0d9e3a7675d" />
+
+
 ## 📂 Repository
 
 [https://github.com/Pritam499/ai-analytical-dashboard](https://github.com/Pritam499/ai-analytical-dashboard)
