@@ -1,4 +1,4 @@
-# ADmyBRAND Insights Dashboard
+# AI-Powered Analytics Dashboard (ADmyBRAND)
 
 A fully client-side **Next.js 14 App Router** analytics dashboard featuring:
 
