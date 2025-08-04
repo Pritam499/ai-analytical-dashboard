@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ADmyBRAND Insights Dashboard
 
-## Getting Started
+A fully client-side **Next.js 14 App Router** analytics dashboard featuring:
 
-First, run the development server:
+* 🎯 **Key Metrics**: Revenue, Users, Conversions, Growth %
+* 📊 **Interactive Charts**: Line, Bar, Pie (via Recharts)
+* 📋 **Data Table**: sortable, filterable, responsive
+* 📁 **Data Import/Export**: CSV & Excel import, CSV export
+* 🌓 **Dark/Light Mode**: toggle via `next-themes`
+* 🤖 **AI Chat**: ask questions about your data powered by OpenRouter
+* ⚙️ **Mock Data**: dynamic or static sample data via `src/lib`
+
+---
+
+## 🚀 Live Demo
+
+[https://your-netlify-site.netlify.app](https://your-netlify-site.netlify.app)
+
+## 📂 Repository
+
+[https://github.com/your-username/admybrand-insights](https://github.com/your-username/admybrand-insights)
+
+---
+
+## 💻 Getting Started
+
+### Prerequisites
+
+* Node.js ≥ 18
+* npm or Yarn
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/admybrand-insights.git
+cd admybrand-insights
+
+# Install dependencies
+npm install
+# or
+yarn
+```
+
+### Environment Variables
+
+Create a `.env.local` in the project root and add:
+
+```env
+NEXT_PUBLIC_OPENROUTER_API_KEY=your_openrouter_api_key_here
+```
+
+### Run Locally
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Design & Components
 
-## Learn More
+* Built with **shadcn/ui** (Tailwind CSS)
+* Component source in `src/components/`
+* State & data logic in:
 
-To learn more about Next.js, take a look at the following resources:
+  * `src/context/DataContext.tsx`
+  * `src/lib/data.ts` (mock generator)
+  * `src/lib/mockData.ts` (static sample)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ☁️ Deployment to Netlify
 
-## Deploy on Vercel
+1. Push to GitHub
+2. In Netlify, click **New site from Git** → select repo
+3. Set **Build command** to:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Set **Publish directory** to:
+
+```
+out
+```
+
+(or leave blank for SSR)
+5\. Add environment variable in Netlify dashboard:
+
+```text
+NEXT_PUBLIC_OPENROUTER_API_KEY=your_key_here
+```
+
+6. Deploy!
+
+---
+
+## 🤖 AI Usage Report
+
+**Tools**: ChatGPT (OpenAI), GitHub Copilot, Lucide icons
+
+**Summary**:
+
+* Scaffolding Next.js + Tailwind + shadcn/ui components
+* Writing mock-data generators in `src/lib`
+* Implementing AI chat via OpenRouter API
+* Building charts and data table UI
+* Creating deployment scripts and docs
+
+---
+
+## 📄 License
+
+MIT © Your Name
