@@ -22,13 +22,39 @@ export function generateMockData(count = 30): DataRow[] {
   return arr;
 }
 
-export function validateImportedData(raw: any[]): DataRow[] {
+// Use a generic object type instead of `any[]`
+export function validateImportedData(
+  raw: Record<string, unknown>[]
+): DataRow[] {
   return raw.map((r) => ({
-    date: r.date || new Date().toISOString().split('T')[0],
-    revenue: parseFloat(r.revenue ?? r.Revenue ?? 0),
-    users: parseInt(r.users ?? r.Users ?? 0, 10),
-    conversions: parseInt(r.conversions ?? r.Conversions ?? 0, 10),
+    date:
+      typeof r.date === 'string'
+        ? r.date
+        : new Date().toISOString().split('T')[0],
+    revenue: parseFloat(
+      (r.revenue as string) ??
+        (r.Revenue as string) ??
+        '0'
+    ),
+    users: parseInt(
+      (r.users as string) ??
+        (r.Users as string) ??
+        '0',
+      10
+    ),
+    conversions: parseInt(
+      (r.conversions as string) ??
+        (r.Conversions as string) ??
+        '0',
+      10
+    ),
     growth:
-      parseFloat(r.growth ?? r.Growth ?? r['Growth %'] ?? 0) / (r['Growth %'] ? 1 : 100),
+      parseFloat(
+        (r.growth as string) ??
+          (r.Growth as string) ??
+          (r['Growth %'] as string) ??
+          '0'
+      ) /
+      ((r['Growth %'] as string) ? 1 : 100),
   }));
 }
