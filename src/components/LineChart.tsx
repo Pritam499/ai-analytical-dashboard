@@ -1,6 +1,7 @@
 'use client';
+
 import React from 'react';
-import { useData } from '@/context/DataContext';
+import { DataRow } from '@/types';
 import {
   LineChart as LC,
   Line,
@@ -12,8 +13,11 @@ import {
 } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-export function LineChart() {
-  const { data } = useData();
+interface Props {
+  data: DataRow[];
+}
+
+export function LineChart({ data }: Props) {
   return (
     <Card>
       <CardHeader>

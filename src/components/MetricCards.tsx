@@ -1,16 +1,19 @@
 'use client';
+
 import React from 'react';
-import { useData } from '@/context/DataContext';
 import {
   Card,
   CardHeader,
   CardTitle,
   CardContent,
 } from '@/components/ui/card';
+import { DataRow } from '@/types';
 
-export function MetricCards() {
-  const { data } = useData();
+interface Props {
+  data: DataRow[];
+}
 
+export function MetricCards({ data }: Props) {
   const totalRevenue = data.reduce((s, r) => s + r.revenue, 0);
   const totalUsers = data.reduce((s, r) => s + r.users, 0);
   const totalConversions = data.reduce((s, r) => s + r.conversions, 0);
@@ -24,14 +27,8 @@ export function MetricCards() {
       {[
         { title: 'Revenue', value: `$${totalRevenue.toFixed(2)}` },
         { title: 'Users', value: totalUsers.toString() },
-        {
-          title: 'Conversions',
-          value: totalConversions.toString(),
-        },
-        {
-          title: 'Avg. Growth',
-          value: `${(avgGrowth * 100).toFixed(2)}%`,
-        },
+        { title: 'Conversions', value: totalConversions.toString() },
+        { title: 'Avg. Growth', value: `${(avgGrowth * 100).toFixed(2)}%` },
       ].map((m) => (
         <Card key={m.title}>
           <CardHeader>

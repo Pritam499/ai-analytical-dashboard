@@ -35,6 +35,8 @@ export function ImportExport() {
     URL.revokeObjectURL(url);
   };
 
+  // Export dashboard section to PDF
+
   // Handle file input (CSV or Excel)
   const onFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -82,7 +84,7 @@ export function ImportExport() {
   };
 
   return (
-    <div className="flex space-x-2">
+    <div className="flex flex-wrap gap-2">
       <Button onClick={exportCSV}>Export CSV</Button>
       <label>
         <input

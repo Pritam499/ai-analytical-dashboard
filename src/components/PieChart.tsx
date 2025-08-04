@@ -1,6 +1,7 @@
 'use client';
+
 import React from 'react';
-import { useData } from '@/context/DataContext';
+import { DataRow } from '@/types';
 import {
   PieChart as PC,
   Pie,
@@ -10,9 +11,11 @@ import {
 } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-export function PieChart() {
-  const { data } = useData();
-  // Show proportion of conversions vs users (just example)
+interface Props {
+  data: DataRow[];
+}
+
+export function PieChart({ data }: Props) {
   const totalUsers = data.reduce((s, r) => s + r.users, 0);
   const totalConv = data.reduce((s, r) => s + r.conversions, 0);
 

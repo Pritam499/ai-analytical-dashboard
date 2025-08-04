@@ -1,6 +1,7 @@
 'use client';
+
 import React from 'react';
-import { useData } from '@/context/DataContext';
+import { DataRow } from '@/types';
 import {
   Table,
   TableBody,
@@ -10,19 +11,19 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
-export function DataTable() {
-  const { data } = useData();
+interface Props {
+  data: DataRow[];
+}
 
+export function DataTable({ data }: Props) {
   return (
     <div className="overflow-x-auto">
       <Table>
         <TableHeader>
           <TableRow>
-            {['Date', 'Revenue', 'Users', 'Conversions', 'Growth %'].map(
-              (h) => (
-                <TableHead key={h}>{h}</TableHead>
-              )
-            )}
+            {['Date', 'Revenue', 'Users', 'Conversions', 'Growth %'].map((h) => (
+              <TableHead key={h}>{h}</TableHead>
+            ))}
           </TableRow>
         </TableHeader>
         <TableBody>
