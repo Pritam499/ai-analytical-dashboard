@@ -14,11 +14,11 @@ A fully client-side **Next.js 14 App Router** analytics dashboard featuring:
 
 ## 🚀 Live Demo
 
-[https://your-netlify-site.netlify.app](https://your-netlify-site.netlify.app)
+[https://analytics-dashboard-ai.netlify.app/](https://analytics-dashboard-ai.netlify.app)
 
 ## 📂 Repository
 
-[https://github.com/your-username/admybrand-insights](https://github.com/your-username/admybrand-insights)
+[https://github.com/Pritam499/ai-analytical-dashboard](https://github.com/Pritam499/ai-analytical-dashboard)
 
 ---
 
@@ -31,8 +31,8 @@ A fully client-side **Next.js 14 App Router** analytics dashboard featuring:
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/admybrand-insights.git
-cd admybrand-insights
+git clone https://github.com/Pritam499/ai-analytical-dashboard.git
+cd ai-analytical-dashboard
 
 # Install dependencies
 npm install
